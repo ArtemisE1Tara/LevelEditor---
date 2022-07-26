@@ -5,6 +5,8 @@
 #include "UnityEngine/GameObject.hpp"
 #include "HMUI/CurvedTextMeshPro.hpp"
 #include "UnityEngine/Resources.hpp"
+#include "questui/shared/QuestUI.hpp"
+#include "questui/shared/BeatSaberUI.hpp"
 
 static ModInfo modInfo; // Stores the ID and version of our mod, and is sent to the modloader upon startup
 
@@ -21,16 +23,6 @@ Logger& getLogger() {
     return *logger;
 }
 
-// Called at the early stages of game loading
-extern "C" void setup(ModInfo& info) {
-    info.id = ID;
-    info.version = VERSION;
-    modInfo = info;
-	
-    getConfig().Load(); // Load the config file
-    getLogger().info("Completed setup!");
-}
-
 MAKE_AUTO_HOOK_MATCH(LevelEditor, &GlobalNamespace::MainMenuViewController::DidActivate, void, GlobalNamespace::MainMenuViewController
 *self, bool firstActivation, bool addedToHierarchy, bool screenSystemEnabling) {
 
@@ -43,11 +35,22 @@ MAKE_AUTO_HOOK_MATCH(LevelEditor, &GlobalNamespace::MainMenuViewController::DidA
 
 }
 
+// Called at the early stages of game loading
+extern "C" void setup(ModInfo& info) {
+    info.id = ID;
+    info.version = VERSION;
+    modInfo = info;
+	
+    getConfig().Load(); // Load the config file
+    getLogger().info("Completed setup!");
+}
+
 // Called later on in the game loading - a good time to install function hooks
 extern "C" void load() {
     il2cpp_functions::Init();
     
     getLogger().info("Installing hooks...");
-    
+    auto& logger = getLogger();
+    Hooks::InstallHooks(logger);
     getLogger().info("Installed all hooks!");
 }

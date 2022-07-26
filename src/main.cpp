@@ -1,4 +1,9 @@
 #include "main.hpp"
+#include "hooks.hpp"
+#include "GlobalNamespace/MainMenuViewController.hpp"
+#include "UnityEngine/UI/Button.hpp"
+#include "UnityEngine/GameObject.hpp"
+#include "HMUI/CurvedTextMeshPro.hpp"
 
 static ModInfo modInfo; // Stores the ID and version of our mod, and is sent to the modloader upon startup
 
@@ -23,6 +28,18 @@ extern "C" void setup(ModInfo& info) {
 	
     getConfig().Load(); // Load the config file
     getLogger().info("Completed setup!");
+}
+
+MAKE_AUTO_HOOK_MATCH(LevelEditor, &GlobalNamespace::MainMenuViewController::DidActivate, void, GlobalNamespace::MainMenuViewController
+*self, bool firstActivation, bool addedToHierarchy, bool screenSystemEnabling) {
+
+    LevelEditor(self, firstActivation, addedToHierarchy, screenSystemEnabling);
+
+    UnityEngine::UI::Button *beatmapEditorButton = self->dyn__beatmapEditorButton();
+    UnityEngine::GameObject *gameObject = beatmapEditorButton->get_gameObject();
+
+    gameObject->SetActive(true);
+
 }
 
 // Called later on in the game loading - a good time to install function hooks

@@ -46,8 +46,8 @@ MAKE_AUTO_HOOK_MATCH(LevelEditor, &GlobalNamespace::MainMenuViewController::DidA
 // Called later on in the game loading - a good time to install function hooks
 extern "C" void load() {
     il2cpp_functions::Init();
-    QuestUI::Init();
+    
     getLogger().info("Installing hooks...");
-    Hooks::InstallHooks(logger);
+    
     getLogger().info("Installed all hooks!");
 }

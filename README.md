@@ -1,7 +1,9 @@
-# Quest Mod Template
+# Level Editor+++
 
-A template for creating Beat Saber mods for the Oculus Quest. This template takes advantage of the VScode [Project Templates Extension](https://marketplace.visualstudio.com/items?itemName=cantonios.project-templates) to handle the placeholders.
+Adds beatmap editor to quest
 
-This template is set up for downloading dependencies using QPM-Rust. You can find more info about getting started with Quest modding [here](https://github.com/danrouse/beatsaber-quest-modding-guide).
+## Credits
 
-Created by [Lauriethefish](https://github.com/Lauriethefish), [danrouse](https://github.com/danrouse) and [Bobby Shmurner](https://github.com/BobbyShmurner).
+* [zoller27osu](https://github.com/zoller27osu), [Sc2ad](https://github.com/Sc2ad) and [jakibaki](https://github.com/jakibaki) - [beatsaber-hook](https://github.com/sc2ad/beatsaber-hook)
+* [raftario](https://github.com/raftario)
+* [Lauriethefish](https://github.com/Lauriethefish), [danrouse](https://github.com/danrouse) and [Bobby Shmurner](https://github.com/BobbyShmurner) for [this template](https://github.com/Lauriethefish/quest-mod-template)

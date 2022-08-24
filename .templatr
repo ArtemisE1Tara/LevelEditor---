@@ -1,0 +1,13 @@
+{
+  "name": "Quest Mod Template",
+  "author": "Lauriethefish",
+  "src": "./template",
+  "description": "Template for creating QuestPatcher/BMBF mods for the Oculus Quest.",
+  "placeholders": [
+    {"match": "C:\modding\android-ndk-r25-windows\android-ndk-r25", "prompt": "The path to the android NDK", "cachable": true},
+    {"match": "leveleditor+++", "prompt": "The ID of the mod"},
+    {"match": "Level Editor+++", "prompt": "The name of the mod"},
+    {"match": "Anonymous", "prompt": "The author of the mod"},
+    {"match": "Adds beatmap editor to quest", "prompt": "The description of the mod"}
+  ]
+}

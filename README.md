@@ -1,17 +1,7 @@
-# LevelEditor+++
+# Quest Mod Template
 
-**Edit Levels on Quest!**
+A template for creating Beat Saber mods for the Oculus Quest. This template takes advantage of the VScode [Project Templates Extension](https://marketplace.visualstudio.com/items?itemName=cantonios.project-templates) to handle the placeholders.
 
-<img src="LevelEditor+++.jpg" alt="drawing" width="400"/>
+This template is set up for downloading dependencies using QPM-Rust. You can find more info about getting started with Quest modding [here](https://github.com/danrouse/beatsaber-quest-modding-guide).
 
-# Features:
-
-- Easily edit existing beatmaps and make them your own!
-
-- Includes the 1.22.1 update of the PC version to create and edit arc and chain maps, aka V3 maps!
-
-# How to use
-
-- Install the qmod from [releases](https://github.com/ArtemisE1Tara/LevelEditor---/releases)
-
-- Thats it!
+Created by [Lauriethefish](https://github.com/Lauriethefish), [danrouse](https://github.com/danrouse) and [Bobby Shmurner](https://github.com/BobbyShmurner).

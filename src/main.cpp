@@ -1,5 +1,4 @@
 #include "main.hpp"
-#include "main.hpp"
 #include "hooks.hpp"
 #include "GlobalNamespace/MainMenuViewController.hpp"
 #include "UnityEngine/UI/Button.hpp"
@@ -8,6 +7,7 @@
 #include "UnityEngine/Resources.hpp"
 #include "questui/shared/QuestUI.hpp"
 #include "questui/shared/BeatSaberUI.hpp"
+#include "GlobalNamespace/SaberTypeExtensions.hpp"
 
 static ModInfo modInfo; // Stores the ID and version of our mod, and is sent to the modloader upon startup
 
@@ -35,7 +35,7 @@ extern "C" void setup(ModInfo& info) {
 }
 
 MAKE_AUTO_HOOK_MATCH(LevelEditor, &GlobalNamespace::MainMenuViewController::DidActivate, void, GlobalNamespace::MainMenuViewController
-*self, bool firstActivation, bool addedToHierarchy, bool screenSystemEnabling) {
+    *self, bool firstActivation, bool addedToHierarchy, bool screenSystemEnabling) {
 
     LevelEditor(self, firstActivation, addedToHierarchy, screenSystemEnabling);
 
@@ -45,6 +45,8 @@ MAKE_AUTO_HOOK_MATCH(LevelEditor, &GlobalNamespace::MainMenuViewController::DidA
     gameObject->SetActive(true);
 
 }
+
+
 
 // Called later on in the game loading - a good time to install function hooks
 extern "C" void load() {

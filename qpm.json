@@ -2,12 +2,12 @@
   "sharedDir": "shared",
   "dependenciesDir": "extern",
   "info": {
-    "name": "Level Editor+++",
+    "name": "LevelEditor+++",
     "id": "leveleditor+++",
     "version": "0.1.0",
     "url": null,
     "additionalData": {
-      "overrideSoName": "libleveleditor+++.so"
+      "overrideSoName": "leveleditor+++.so"
     }
   },
   "dependencies": [
@@ -27,17 +27,17 @@
     },
     {
       "id": "codegen",
-      "versionRange": "^0.25.0",
+      "versionRange": "^0.33.0",
       "additionalData": {}
     },
     {
       "id": "questui",
-      "versionRange": "^0.16.4",
+      "versionRange": "^0.17.11",
       "additionalData": {}
     },
     {
       "id": "custom-types",
-      "versionRange": "^0.15.18",
+      "versionRange": "^0.15.23",
       "additionalData": {}
     }
   ],
